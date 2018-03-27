@@ -1,6 +1,13 @@
 {
-  "name": "Vegan Food Shopper",
+  "name": "Vegan_Food_Shopper",
   "version": "0.0.3",
+  "author": "Maya Novarini",
+  "description": "An application built with ReactJS and Firebase to store order data",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thegirlfromipanema/veganista"
+  },
+  "license": "UNLICENSED",
   "private": true,
   "devDependencies": {
     "concurrently": "3.5.1",
