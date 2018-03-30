@@ -3,6 +3,7 @@ import Header from "./Header";
 import Order from "./Order";
 import Inventory from "./Inventory";
 import menu from '../sample-dishes';
+import Dish from './Dish';
 
 class App extends React.Component {
   state = {
@@ -33,6 +34,9 @@ class App extends React.Component {
             name={this.props.match.params.ownerId}
             tagline="Fresh, Healthy & Vegan!"
           />
+          <ul className="dishes">
+            {Object.keys(this.state.dishes).map(key => <Dish key="{key}" details={this.state.dishes[key]}/>)}
+        </ul>
         </div>
         <Order />
         <Inventory addDish={this.addDish} loadSampleDishes={this.loadSampleDishes}/>
