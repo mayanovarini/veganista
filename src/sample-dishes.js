@@ -1,4 +1,3 @@
-// This is just some sample data so you don't have to think of your own!
 const menu = {
   dish1: {
     name: "Muesli & Fresh Fruit",
@@ -57,7 +56,8 @@ const menu = {
   dish7: {
     name: "Tofu Nori Rolls",
     image: "/images/tofusushi.jpg",
-    desc: "Sushi is a great thing to know how to cook. Perfect for parties, picnics, lunches and work!",
+    desc:
+      "Sushi is a great thing to know how to cook. Perfect for parties, picnics, lunches and work!",
     price: 2543,
     status: "available"
   },

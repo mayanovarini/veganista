@@ -1,5 +1,4 @@
 import React from "react";
-import OrderOwner from "./OrderOwner";
 
 const Header = props => (
   <header className="top">
