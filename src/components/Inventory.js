@@ -7,7 +7,8 @@ class Inventory extends React.Component {
       <div className="inventory">
         <h2>Inventory</h2>
         <AddDishForm addDish={this.props.addDish}/>
-      <button onClick={this.props.loadSampleDishes}>Load Sample</button>
+        <p className="chef-question">Need some inspiration? <button onClick={this.props.loadSampleDishes}>Chef's Choice</button></p>
+
       </div>
 
     );

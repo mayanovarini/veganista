@@ -26,6 +26,12 @@ class App extends React.Component {
     });
   }
 
+  addToOrder = (key) => {
+    const order = { ...this.state.order };
+    order[key] = order[key] + 1 || 1;
+    this.setState({ order });
+  }
+
   render() {
     return (
       <div className="veganista">
@@ -35,8 +41,14 @@ class App extends React.Component {
             tagline="Fresh, Healthy & Vegan!"
           />
           <ul className="dishes">
-            {Object.keys(this.state.dishes).map(key => <Dish key="{key}" details={this.state.dishes[key]}/>)}
-        </ul>
+            {Object.keys(this.state.dishes).map(key => (
+              <Dish key={key}
+                index={key}
+                details={this.state.dishes[key]}
+                addToOrder={this.addToOrder}
+              />)
+            )}
+          </ul>
         </div>
         <Order />
         <Inventory addDish={this.addDish} loadSampleDishes={this.loadSampleDishes}/>

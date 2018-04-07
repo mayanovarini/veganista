@@ -15,9 +15,12 @@ class OrderOwner extends React.Component {
   render() {
     return (
       <Fragment>
+        <img id="logo" src="/images/logo.png" />
+        <h1 className="logo-tagline">on-demand vegan food shopper</h1>
         <form className="store-selector" onSubmit={this.goToOwner}>
+
           <h2>Your Shopper Today is :</h2>
-          <h2>{getFunName()}</h2>
+          <h2 className="name">{getFunName()}</h2>
           <input
             type="text"
             ref={this.myInput}
