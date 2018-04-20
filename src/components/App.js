@@ -50,7 +50,7 @@ class App extends React.Component {
             )}
           </ul>
         </div>
-        <Order />
+        <Order dishes={this.state.dishes} order={this.state.order}/>
         <Inventory addDish={this.addDish} loadSampleDishes={this.loadSampleDishes}/>
       </div>
     );

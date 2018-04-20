@@ -398,7 +398,7 @@ ul {
   padding: 0;
 }
 ul.order li {
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #e5e5e5;
   padding: 2rem 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -439,6 +439,15 @@ ul.order li span.count {
 }
 ul.order li span.count span {
   display: inline-block;
+}
+
+.total {
+  margin-top: 15px;
+}
+
+.total span {
+  color: #dca91a;
+  font-weight: bold;
 }
 .order-title {
   text-align: center;
