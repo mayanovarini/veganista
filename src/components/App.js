@@ -4,12 +4,27 @@ import Order from "./Order";
 import Inventory from "./Inventory";
 import menu from '../sample-dishes';
 import Dish from './Dish';
+import base from '../base';
 
 class App extends React.Component {
   state = {
     dishes: {},
     order: {}
   };
+
+  componentDidMount() {
+    console.log("did mount");
+    // getting the store name ID from the props of the App made by Route
+    console.log(this.props.match.params.ownerId, "owner id exists?")
+    this.ref = base.syncState(`${this.props.match.params.ownerId}/dishes`, {
+      context: this,
+      state: 'dishes'
+    });
+  }
+
+  componentWillUnmount(){
+    base.removeBinding(this.ref);
+  }
 
   addDish = (dish) => {
     const dishes = {...this.state.dishes}; // shallow copy the state and spread it
