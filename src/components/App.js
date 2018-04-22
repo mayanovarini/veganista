@@ -13,13 +13,24 @@ class App extends React.Component {
   };
 
   componentDidMount() {
-    console.log("did mount");
+    const { params } = this.props.match;
+    // local storage will grab the value using the ownerId as the key
+    const localStorageRef = localStorage.getItem(params.ownerId)
+    console.log("local storage", localStorageRef)
+    if(localStorageRef){
+      this.setState({ order: JSON.parse(localStorageRef)})
+    }
     // getting the store name ID from the props of the App made by Route
-    console.log(this.props.match.params.ownerId, "owner id exists?")
-    this.ref = base.syncState(`${this.props.match.params.ownerId}/dishes`, {
+    this.ref = base.syncState(`${params.ownerId}/dishes`, {
       context: this,
       state: 'dishes'
     });
+  }
+
+  componentDidUpdate() {
+    console.log("it updated with", this.state.order)
+    // persist in local storage, passing in two arguments - key (ownerId) value (order) pair
+    localStorage.setItem(this.props.match.params.ownerId, JSON.stringify(this.state.order))
   }
 
   componentWillUnmount(){

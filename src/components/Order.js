@@ -5,7 +5,12 @@ class Order extends React.Component {
   renderOrder = (key) => {
     const dish = this.props.dishes[key];
     const count = this.props.order[key];
-    const isAvailable = dish.status === 'available';
+    const isAvailable = dish && dish.status === 'available';
+
+    // make sure the dish state loaded or syncronized by firebase
+    if (!dish) {
+      return null;
+    }
     if(!isAvailable) {
       return <li key={key}>Sorry, the {dish ? dish.name : 'dish'} is no longer available :(</li>
     }
