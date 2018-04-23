@@ -722,12 +722,23 @@ input[type=submit].twitter:after {
   margin-top: 3em;
 }
 
-.inventory button {
-  margin: 0 5px;
-
+.remove-dish {
+  color: #dca91a;
+  font-weight: 400;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 0 0 0 380px;
+  background-color: whitesmoke;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 .chef-question {
   float: right;
   font-size: 15px;
+
+}
+
+.chef-question span {
+  margin-right: 10px;
 }
