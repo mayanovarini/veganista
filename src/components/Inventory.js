@@ -13,11 +13,12 @@ class Inventory extends React.Component {
             index={key}
             dish={this.props.dishes[key]}
             updateDish={this.props.updateDish}
+            deleteDish={this.props.deleteDish}
           />
       ))}
 
         <AddDishForm addDish={this.props.addDish}/>
-        <p className="chef-question">Need some inspiration? <button onClick={this.props.loadSampleDishes}>Chef's Choice</button></p>
+        <p className="chef-question">Need some inspiration? <button className="green-button" onClick={this.props.loadSampleDishes}>Chef's Choice</button></p>
 
       </div>
 

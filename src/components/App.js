@@ -53,6 +53,20 @@ class App extends React.Component {
 
   }
 
+  deleteDish = key => {
+    const dishes = { ...this.state.dishes };
+    dishes[key] = null;
+
+    this.setState({ dishes });
+  }
+
+  removeDishFromOrder = key => {
+    const order = { ...this.state.order };
+    delete order[key]
+
+    this.setState({ order });
+  }
+
   loadSampleDishes = () => {
     this.setState({
       dishes: menu
@@ -83,8 +97,8 @@ class App extends React.Component {
             )}
           </ul>
         </div>
-        <Order dishes={this.state.dishes} order={this.state.order}/>
-        <Inventory updateDish={this.updateDish} addDish={this.addDish} loadSampleDishes={this.loadSampleDishes} dishes={this.state.dishes}/>
+        <Order removeDishFromOrder={this.removeDishFromOrder} dishes={this.state.dishes} order={this.state.order}/>
+        <Inventory deleteDish={this.deleteDish} updateDish={this.updateDish} addDish={this.addDish} loadSampleDishes={this.loadSampleDishes} dishes={this.state.dishes}/>
       </div>
     );
   }

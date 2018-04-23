@@ -403,6 +403,7 @@ ul.order li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  flex-direction: row;
   font-size: 1.4rem;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -411,15 +412,27 @@ ul.order li {
       -ms-flex-align: center;
           align-items: center;
 }
-ul.order li:hover button {
-  display: inline;
-}
-ul.order li button {
-  border: 0;
-  display: none;
+
+.remove-order {
+  outline: none;
+  margin-right: -20px;
+  color: #bfbc57;
+  background-color: white;
+  font-size: 35px;
+  border: 1px solid #e5e5e5;
+  border-right: none;
+  border-radius: 40px 0px 0px 40px;
   line-height: 1;
-  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.remove-order:hover {
+  background-color: #ec929a;
+  color: white;
+}
+
 ul.order li.total {
   font-weight: 600;
   border-bottom: 3px solid #000;
@@ -465,10 +478,12 @@ ul.order li span.count span {
 .dish-edit input,
 .dish-edit textarea,
 .dish-edit select {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 300;
   width: 33.33%;
   padding: 10px;
   line-height: 1;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   border: 0;
   border-bottom: 1px solid #0000002e;
   -webkit-appearance: none;
@@ -509,6 +524,7 @@ ul.order li span.count span {
   margin-bottom: 5px;
   clear: both;
   overflow: hidden;
+  position: relative;
 }
 .menu-dish p {
   margin: 0;
@@ -544,8 +560,8 @@ ul.order li span.count span {
   width: 150px;
   margin-right: 1rem;
 }
-button,
-input[type=submit] {
+button.green-button,
+input[type=submit].green-button {
   text-transform: uppercase;
   background: #bfbc57;
   border: 1px solid #dae5e8;
@@ -560,28 +576,30 @@ input[type=submit] {
   transition: all 0.2s;
   position: relative;
   z-index: 2;
-  margin-top: 20px;
 }
-button[disabled],
-input[type=submit][disabled] {
-  float: left;
+
+button[disabled].green-button,
+input[type=submit][disabled].green-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
   color: #d12028;
   background: #fff;
   border-color: #d12028;
-  -webkit-transform: rotate(-10deg) scale(2) translateX(50%) translateY(-50%);
-          transform: rotate(-10deg) scale(2) translateX(50%) translateY(-50%);
+  -webkit-transform: rotate(-10deg) scale(2);
+          transform: rotate(-10deg) scale(2);
 }
-button[disabled]:hover,
-input[type=submit][disabled]:hover {
+button[disabled].green-button:hover,
+input[type=submit][disabled].green-button:hover {
   color: #dae5e8;
   cursor: not-allowed;
 }
-button[disabled]:after,
-input[type=submit][disabled]:after {
+button[disabled].green-button:after,
+input[type=submit][disabled].green-button:after {
   display: none;
 }
-button:after,
-input[type=submit]:after {
+button.green-button:after,
+input[type=submit].green-button:after {
   content: '';
   z-index: -1;
   display: block;
@@ -595,18 +613,16 @@ input[type=submit]:after {
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }
-button:hover,
-input[type=submit]:hover,
-button:focus,
-input[type=submit]:focus {
+button.green-button:hover,
+input[type=submit].green-button:hover,
+button.green-button:focus,
+input[type=submit].green-button:focus {
   color: #fff;
   border-radius: 5px 5px 5px;
   outline: 0;
 }
-button:hover:after,
-input[type=submit]:hover:after,
-button:focus:after,
-input[type=submit]:focus:after {
+button.green-button:hover:after,
+input[type=submit].green-button:hover:after {
   height: 100%;
 }
 button.warning:after,

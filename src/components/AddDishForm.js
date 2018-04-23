@@ -31,7 +31,7 @@ class AddDishForm extends React.Component {
         </select>
         <textarea name="desc" ref={this.descRef} placeholder="Desc" />
         <input name="image" ref={this.imageRef} type="text" placeholder="Image" />
-        <button>+ Add Dish</button>
+        <button class="green-button">+ Add Dish</button>
       </form>
     );
   }

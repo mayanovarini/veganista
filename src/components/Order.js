@@ -14,9 +14,13 @@ class Order extends React.Component {
     if(!isAvailable) {
       return <li key={key}>Sorry, the {dish ? dish.name : 'dish'} is no longer available :(</li>
     }
-    return <li key={key}>
-      {count} lbs {dish.name} - {formatPrice(count * dish.price)}
-    </li>;
+    return (
+      <li key={key}>
+        <span>{count} lbs {dish.name} - {formatPrice(count * dish.price)}</span>
+        <button className="remove-order" onClick={() => this.props.removeDishFromOrder(key)}>&times;</button>
+      </li>
+
+    );
   }
 
   render() {
