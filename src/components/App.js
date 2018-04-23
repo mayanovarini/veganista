@@ -17,6 +17,7 @@ class App extends React.Component {
     // local storage will grab the value using the ownerId as the key
     const localStorageRef = localStorage.getItem(params.ownerId)
     console.log("local storage", localStorageRef)
+
     if(localStorageRef){
       this.setState({ order: JSON.parse(localStorageRef)})
     }
@@ -28,7 +29,6 @@ class App extends React.Component {
   }
 
   componentDidUpdate() {
-    console.log("it updated with", this.state.order)
     // persist in local storage, passing in two arguments - key (ownerId) value (order) pair
     localStorage.setItem(this.props.match.params.ownerId, JSON.stringify(this.state.order))
   }
@@ -44,6 +44,13 @@ class App extends React.Component {
     this.setState({
       dishes
     })
+  }
+
+  updateDish = (key, updatedDish) => {
+    const dishes = { ...this.state.dishes };
+    dishes[key] = updatedDish;
+    this.setState({ dishes });
+
   }
 
   loadSampleDishes = () => {
@@ -77,7 +84,7 @@ class App extends React.Component {
           </ul>
         </div>
         <Order dishes={this.state.dishes} order={this.state.order}/>
-        <Inventory addDish={this.addDish} loadSampleDishes={this.loadSampleDishes}/>
+        <Inventory updateDish={this.updateDish} addDish={this.addDish} loadSampleDishes={this.loadSampleDishes} dishes={this.state.dishes}/>
       </div>
     );
   }
