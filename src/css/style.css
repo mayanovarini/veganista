@@ -736,9 +736,12 @@ input[type=submit].twitter:after {
 .chef-question {
   float: right;
   font-size: 15px;
-
 }
 
 .chef-question span {
   margin-right: 10px;
+}
+
+.chef-question button {
+  background-color: #6cd2a7;
 }

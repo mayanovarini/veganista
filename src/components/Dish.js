@@ -18,7 +18,7 @@ class Dish extends React.Component {
           <span>{formatPrice(price)}</span>
         </h3>
         <p>{desc}</p>
-        <button class="green-button" onClick={this.handleOrder} disabled={isUnavailable}>
+        <button className="green-button" onClick={this.handleOrder} disabled={isUnavailable}>
           {isUnavailable ? 'Sold Out' : 'Add to Order'}
         </button>
       </li>

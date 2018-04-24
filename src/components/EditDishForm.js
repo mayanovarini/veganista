@@ -19,7 +19,7 @@ class EditDishForm extends React.Component {
         </select>
         <textarea name="desc" placeholder="Desc" onChange={this.handleChange} value={this.props.dish.desc} />
         <input name="image" type="text" placeholder="Image" onChange={this.handleChange} value={this.props.dish.image} />
-        <p class="remove-dish" onClick={() => this.props.deleteDish(this.props.index)}>Remove Dish</p>
+        <p className="remove-dish" onClick={() => this.props.deleteDish(this.props.index)}>Remove Dish</p>
       </div>
     );
   }
