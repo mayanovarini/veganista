@@ -1,8 +1,12 @@
 import React, { Fragment } from "react";
+import PropTypes from "prop-types";
 import { getFunName } from "../helpers";
 
 class OrderOwner extends React.Component {
   myInput = React.createRef();
+  static propTypes = {
+    history: PropTypes.object
+  };
 
   goToOwner = event => {
     event.preventDefault();

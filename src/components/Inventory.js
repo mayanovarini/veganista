@@ -1,8 +1,16 @@
 import React from "react";
+import PropTypes from "prop-types";
 import AddDishForm from "./AddDishForm";
 import EditDishForm from "./EditDishForm";
 
 class Inventory extends React.Component {
+  static propTypes = {
+    dishes: PropTypes.object,
+    updateDish: PropTypes.func,
+    deleteDish: PropTypes.func,
+    loadSampleDishes: PropTypes.func
+  };
+  
   render() {
     return (
       <div className="inventory">
