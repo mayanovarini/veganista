@@ -745,3 +745,15 @@ input[type=submit].twitter:after {
 .chef-question button {
   background-color: #6cd2a7;
 }
+
+.logout-button {
+  color: #5d730e;
+  border: none;
+  background-color: whitesmoke;
+  font-size: 20px;
+  font-family: 'Amatic SC';
+}
+
+.inventory h2 span {
+
+}

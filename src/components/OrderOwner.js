@@ -31,7 +31,7 @@ class OrderOwner extends React.Component {
             required
             placeholder="Your Name"
           />
-          <button type="submit">Send Your Order</button>
+        <button className="green-button" type="submit">Send Your Order</button>
         </form>
       </Fragment>
     );
