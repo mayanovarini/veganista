@@ -7,25 +7,29 @@ class Order extends React.Component {
     const dish = this.props.dishes[key];
     const count = this.props.order[key];
     const isAvailable = dish && dish.status === 'available';
-
+    const transitionOptions = {
+      classNames: "order",
+      key,
+      timeout: { enter: 250, exit: 250 }
+    };
     // make sure the dish state loaded or syncronized by firebase
     if (!dish) {
       return null;
     }
     if(!isAvailable) {
       return (
-        <CSSTransition classNames="order" key={key} timeout={{ enter: 250, exit: 250 }}>
+        <CSSTransition {...transitionOptions}>
           <li key={key}>Sorry, the {dish ? dish.name : 'dish'} is no longer available :(</li>
         </CSSTransition>
       )
     }
     return (
-      <CSSTransition classNames="order" key={key} timeout={{ enter: 250, exit: 250 }}>
+      <CSSTransition {...transitionOptions}>
         <li key={key}>
           <span>{count} lbs {dish.name} - {formatPrice(count * dish.price)}</span>
           <button className="remove-order" onClick={() => this.props.removeDishFromOrder(key)}>&times;</button>
         </li>
-        
+
       </CSSTransition>
 
     );
